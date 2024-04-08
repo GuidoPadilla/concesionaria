@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.car-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+
+.car-image {
+    width: 300px;
+    /* Tamaño fijo para la imagen */
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.car-details {
+    text-align: center;
+}
+
+button {
+    margin-right: 5px;
+}

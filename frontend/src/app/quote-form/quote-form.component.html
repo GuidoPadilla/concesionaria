@@ -1,0 +1,21 @@
+<form (ngSubmit)="submitForm()" class="quote-form" #quoteForm="ngForm">
+    <mat-form-field>
+        <mat-label>Metodo de pago</mat-label>
+        <mat-select [(ngModel)]="paymentMethod" name="paymentMethod" required>
+            <mat-option value="Contado">Contado</mat-option>
+            <mat-option value="Crédito">Crédito</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="number" placeholder="Numero de pagos" [(ngModel)]="numberOfPayments"
+            name="numberOfPayments" required>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="tel" placeholder="Numero de telefono" [(ngModel)]="phoneNumber" name="phoneNumber"
+            required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="quoteForm.invalid">Realizar Cotiazación</button>
+</form>

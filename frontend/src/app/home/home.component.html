@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card-container">
+        <mat-card *ngFor="let car of cars" class="card" (click)="navigateToCarDetail(car.id)" matRipple>
+            <img mat-card-image [src]="car.imageUrl" alt="Car Image">
+            <mat-card-content>
+                <h3>{{ car.brand }} {{ car.model }}</h3>
+                <p>Año: {{ car.year }}</p>
+                <p>Cantidad Disponible: {{ car.availableQuantity }}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

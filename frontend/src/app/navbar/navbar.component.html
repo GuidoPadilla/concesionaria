@@ -1,0 +1,16 @@
+<p>
+    <mat-toolbar color="primary">
+        <a mat-button routerLink="/home" routerLinkActive="active">Inicio</a>
+        <span class="spacer"></span>
+        <ng-container *ngIf="isLoggedIn; else loggedOutNav">
+            <!-- Display authenticated user links -->
+            <!-- <a mat-button routerLink="/quote" routerLinkActive="active">Cotizar un carro</a> -->
+            <a mat-button (click)="logout()">Cerrar Sesión</a>
+        </ng-container>
+        <ng-template #loggedOutNav>
+            <!-- Display login and signup links -->
+            <a mat-button routerLink="/login" routerLinkActive="active">Iniciar Sesión</a>
+            <a mat-button routerLink="/signup" routerLinkActive="active">Registrarse</a>
+        </ng-template>
+    </mat-toolbar>
+</p>

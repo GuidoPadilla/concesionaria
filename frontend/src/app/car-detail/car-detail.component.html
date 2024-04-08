@@ -1,0 +1,21 @@
+<div class="container" *ngIf="car">
+    <div class="car-detail">
+        <img class="car-image" [src]="car.imageUrl" alt="Car Image">
+        <div class="car-details">
+            <h3>{{ car.brand }} {{ car.model }}</h3>
+            <p>Año: {{ car.year }}</p>
+            <p>Cantidad Disponible: {{ car.availableQuantity }}</p>
+            <p>Precio: {{ car.price | currency:'GTQ':'symbol':'1.0-0' }}</p>
+            <button mat-raised-button color="primary" (click)="requestQuote()">Cotizar</button>
+            <button mat-raised-button color="primary" [disabled]="!isLoggedIn()" (click)="hookCar()">
+                {{ isLoggedIn() ? 'Enganchar' : 'Inicie sesión para enganchar' }}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="!car">
+    <div class="not-found-message">
+        <h2>Carro no Encontrado</h2>
+    </div>
+</div>
